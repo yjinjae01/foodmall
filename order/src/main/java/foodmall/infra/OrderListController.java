@@ -21,7 +21,7 @@ public class OrderListController {
 
 
 
-
+/**
     @RequestMapping(value = "orderLists/{id}/cancel",
         method = RequestMethod.PUT,
         produces = "application/json;charset=UTF-8")
@@ -38,7 +38,7 @@ public class OrderListController {
             
     }
     
-
+*/
 
 
 }
