@@ -39,7 +39,7 @@
 
 기능/비기능 요구사항 충족 여부
 
-![image](https://user-images.githubusercontent.com/118959734/206339400-45a7bf07-b8f6-4056-9ee7-d01ce25b45d6.png)
+![image](https://user-images.githubusercontent.com/118959734/206339573-86b0316e-df2a-46c0-9b1f-64d8392e69a0.png)
 
 
 추가 1 : 고객은 결재내역과 상태를 확인한다.
