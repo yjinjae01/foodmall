@@ -47,7 +47,8 @@
 
 ### 1.Saga(Pub/Sub)
 고객이 주문하고 결재가 처리되면 상점에 주문내역이 전달된다.
-![image](https://user-images.githubusercontent.com/118959734/205808546-41d561a4-2ea1-41d5-96fc-b93516060759.png)
+![image](https://user-images.githubusercontent.com/118959734/206338492-ca5a4e9b-9e2b-457d-8278-feef8a5470bd.png)
+
 
 ![image](https://user-images.githubusercontent.com/118959734/206336508-fc2f0470-32ee-4bc6-a6b5-d4412e982e67.png)
 
