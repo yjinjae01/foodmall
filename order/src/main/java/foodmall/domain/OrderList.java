@@ -34,16 +34,9 @@ public class OrderList  {
         OrderPlaced orderPlaced = new OrderPlaced(this);
         orderPlaced.publishAfterCommit();
 
-        // Get request from Payment
-        //foodmall.external.Payment payment =
-        //    Application.applicationContext.getBean(foodmall.external.PaymentService.class)
-        //    .getPayment(/** mapping value needed */);
-
     }
 
-    /**
-     * 
-     */
+    
     @PreRemove
     public void onPreRemove(){
 
