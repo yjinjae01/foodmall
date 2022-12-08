@@ -13,7 +13,6 @@ public class Delivered extends AbstractEvent {
     private String status;
     private String orderId;
 
-    
 }
 
 
