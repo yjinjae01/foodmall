@@ -72,7 +72,8 @@ CQRS 가 설정된 소스 내용
 
 상태 조회를 한 결과 내용
 
-![image](https://user-images.githubusercontent.com/118959734/205810148-018288a4-da67-47e1-8bba-e16dacf63df0.png)
+![image](https://user-images.githubusercontent.com/118959734/206338261-7d4ce4d3-39f2-494e-a5a7-9c903fbf3d0c.png)
+
 
 
 ### 3.Compensation/Correlation 
