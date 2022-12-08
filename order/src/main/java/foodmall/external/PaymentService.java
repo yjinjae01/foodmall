@@ -9,8 +9,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.Date;
 
 
-@FeignClient(name = "order", url = "${api.url.order}")
+@FeignClient(name = "order", url = "${api.url.order}", fallback = PaymentServiceImpl.class)
 public interface PaymentService {
-    @RequestMapping(method= RequestMethod.GET, path="/payments/{id}")
-    public Payment getPayment(@PathVariable("id") Long id);
+    @RequestMapping(method = RequestMethod.PUT, path = "/payments/{id}/cancelpayment")
+    public void cancelPayment(
+        @PathVariable("id") Long id,
+        @RequestBody CancelPaymentCommand cancelPaymentCommand
+    );
+
+    @RequestMapping(method = RequestMethod.GET, path = "/payments/{id}")
+    public Payment getPayment(
+        @PathVariable("id") Long id
+    );
 }
