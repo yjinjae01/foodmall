@@ -41,6 +41,9 @@
 
 ![image](https://user-images.githubusercontent.com/118959734/206339573-86b0316e-df2a-46c0-9b1f-64d8392e69a0.png)
 
+![image](https://user-images.githubusercontent.com/118959734/206359630-e5e391b6-d132-43a1-bfa3-7a131a565f17.png)
+
+
 추가 1 : 고객은 결재내역과 상태를 확인한다.
 ![image](https://user-images.githubusercontent.com/118959734/205819379-6b3bf139-9286-4b43-a56b-ce2d51330591.png)
 
