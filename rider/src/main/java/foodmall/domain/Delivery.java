@@ -15,39 +15,21 @@ import java.util.Date;
 
 public class Delivery  {
 
-
-    
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     
-    
-    
-    
-    
     private Long id;
-    
-    
-    
-    
     
     private String address;
     
-    
-    
-    
-    
     private String status;
-    
-    
-    
-    
     
     private String orderId;
 
     @PostPersist
     public void onPostPersist(){
 
-
+      /** 
         Picked picked = new Picked(this);
         picked.publishAfterCommit();
 
@@ -55,7 +37,7 @@ public class Delivery  {
 
         Delivered delivered = new Delivered(this);
         delivered.publishAfterCommit();
-
+       */
     }
 
     public static DeliveryRepository repository(){
@@ -64,69 +46,68 @@ public class Delivery  {
     }
 
 
+    // 배달 출발
+    public void pick(){
+        if ("OrderFinish".equals(status)) {
+            setStatus("Pick");
+            Picked picked = new Picked(this);
+            picked.publishAfterCommit();
+        } else {
+            // 요리 안됨
+            throw new RuntimeException("Unable to pick up : " + status);
+        }
+    }
 
+    // 배달 완료
+    public void deliveryConfirm(){
+        if ("Pick".equals(status)) {
+            setStatus("Complete");
+            Delivered delivered = new Delivered(this);
+            delivered.publishAfterCommit();
+        } else {
+            // 배달 출발 안함
+            throw new RuntimeException("Unable to receive delivery. : " + status);
+        }
+
+    }
 
     public static void orderInfo(OrderAccepted orderAccepted){
 
-        /** Example 1:  new item 
         Delivery delivery = new Delivery();
+        delivery.setAddress(orderAccepted.getAddress());
+        delivery.setOrderId(orderAccepted.getOrderId());
+        delivery.setStatus(orderAccepted.getStatus());
+
         repository().save(delivery);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(orderAccepted.get???()).ifPresent(delivery->{
-            
-            delivery // do something
-            repository().save(delivery);
-
-
-         });
-        */
 
         
     }
+
+    // 주문 취소
     public static void updateStatus(OrderRejected orderRejected){
 
-        /** Example 1:  new item 
-        Delivery delivery = new Delivery();
-        repository().save(delivery);
-
-        */
-
-        /** Example 2:  finding and process
         
-        repository().findById(orderRejected.get???()).ifPresent(delivery->{
+        repository().findByOrderId(orderRejected.getOrderId()).ifPresent(delivery->{
             
-            delivery // do something
-            repository().save(delivery);
+           repository().delete(delivery);
 
 
          });
-        */
+      
 
         
     }
+    // 요리 완료
     public static void updateStatus(OrderFinished orderFinished){
 
-        /** Example 1:  new item 
-        Delivery delivery = new Delivery();
-        repository().save(delivery);
 
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(orderFinished.get???()).ifPresent(delivery->{
+        repository().findByOrderId(orderFinished.getOrderId()).ifPresent(delivery->{
             
-            delivery // do something
+            delivery.setStatus(orderFinished.getStatus()); 
             repository().save(delivery);
 
-
          });
-        */
-
+        
         
     }
 
