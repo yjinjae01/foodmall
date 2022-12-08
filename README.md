@@ -35,11 +35,10 @@
 ## DDD 적용
 1차 모델
 
-![image](https://user-images.githubusercontent.com/118959734/206339356-215a5d5f-6af6-4c34-b613-2ce5d03ae2f5.png)
+![image](https://user-images.githubusercontent.com/118959734/206359737-25ef0266-1157-457d-a552-2160680258d3.png)
+
 
 기능/비기능 요구사항 충족 여부
-
-![image](https://user-images.githubusercontent.com/118959734/206339573-86b0316e-df2a-46c0-9b1f-64d8392e69a0.png)
 
 ![image](https://user-images.githubusercontent.com/118959734/206359630-e5e391b6-d132-43a1-bfa3-7a131a565f17.png)
 
