@@ -46,7 +46,7 @@
 ## 체크포인트
 
 ### 1.Saga(Pub/Sub)
-고객이 주문하고 결재가 처리되면 상점에 주문내역이 전달된다.
+고객이 주문하고 결재가 처리되면 상점에 주문내역이 전달된다. (Pub)
 
 ![image](https://user-images.githubusercontent.com/118959734/206338492-ca5a4e9b-9e2b-457d-8278-feef8a5470bd.png)
 
@@ -54,7 +54,7 @@
 ![image](https://user-images.githubusercontent.com/118959734/206336508-fc2f0470-32ee-4bc6-a6b5-d4412e982e67.png)
 
 
-상점에서 주문내역을 확인한다.
+상점에서 주문내역을 확인한다. (Sub)
 
 ![image](https://user-images.githubusercontent.com/118959734/206336062-9da7b34a-ac4d-475f-8bce-f0b7884a8907.png)
 
