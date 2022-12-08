@@ -33,7 +33,14 @@
 2. 라이더는 pick이 있는지 여부와 배달완료가 되었는지 확인한다.
 
 ## DDD 적용
-![image](https://user-images.githubusercontent.com/118959734/205806811-d569d167-caee-4d7b-8c8d-4c07ad5e08de.png)
+1차 모델
+
+![image](https://user-images.githubusercontent.com/118959734/206339356-215a5d5f-6af6-4c34-b613-2ce5d03ae2f5.png)
+
+기능/비기능 요구사항 충족 여부
+
+![image](https://user-images.githubusercontent.com/118959734/206339400-45a7bf07-b8f6-4056-9ee7-d01ce25b45d6.png)
+
 
 추가 1 : 고객은 결재내역과 상태를 확인한다.
 ![image](https://user-images.githubusercontent.com/118959734/205819379-6b3bf139-9286-4b43-a56b-ce2d51330591.png)
