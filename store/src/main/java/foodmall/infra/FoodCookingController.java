@@ -38,7 +38,40 @@ public class FoodCookingController {
     }
     
 
+    @RequestMapping(value = "foodCookings/{id}/start",
+        method = RequestMethod.PUT,
+        produces = "application/json;charset=UTF-8")
+    public FoodCooking start(@PathVariable(value = "id") Long id, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        System.out.println("##### /foodCooking/start  called #####");
+        Optional<FoodCooking> optionalFoodCooking = foodCookingRepository.findByOrderId(String.valueOf(id));
+        
+        optionalFoodCooking.orElseThrow(()-> new Exception("No Entity Found"));
+        FoodCooking foodCooking = optionalFoodCooking.get();
+        foodCooking.start();
+        
+        foodCookingRepository.save(foodCooking);
+        return foodCooking;
+        
+    }
 
+
+
+
+    @RequestMapping(value = "foodCookings/{id}/finish",
+        method = RequestMethod.PUT,
+        produces = "application/json;charset=UTF-8")
+    public FoodCooking finish(@PathVariable(value = "id") Long id, HttpServletRequest request, HttpServletResponse response) throws Exception {
+        System.out.println("##### /foodCooking/finish  called #####");
+        Optional<FoodCooking> optionalFoodCooking = foodCookingRepository.findByOrderId(String.valueOf(id));
+        
+        optionalFoodCooking.orElseThrow(()-> new Exception("No Entity Found"));
+        FoodCooking foodCooking = optionalFoodCooking.get();
+        foodCooking.finish();
+        
+        foodCookingRepository.save(foodCooking);
+        return foodCooking;
+        
+    }
 
 
 
