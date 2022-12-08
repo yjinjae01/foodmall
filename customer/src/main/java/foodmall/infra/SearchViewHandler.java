@@ -67,7 +67,7 @@ public class SearchViewHandler {
             if( searchOptional.isPresent()) {
                  Search search = searchOptional.get();
             // view 객체에 이벤트의 eventDirectValue 를 set 함
-                search.setStatus("OrderAccept"");    
+                search.setStatus("OrderAccept");    
                 // view 레파지 토리에 save
                  searchRepository.save(search);
                 }
