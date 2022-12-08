@@ -49,7 +49,8 @@
 고객이 주문하고 결재가 처리되면 상점에 주문내역이 전달된다.
 ![image](https://user-images.githubusercontent.com/118959734/205808546-41d561a4-2ea1-41d5-96fc-b93516060759.png)
 
-![image](https://user-images.githubusercontent.com/118959734/205808638-ee4d0c3f-0240-4e90-86dc-7529b76a757b.png)
+![image](https://user-images.githubusercontent.com/118959734/206336508-fc2f0470-32ee-4bc6-a6b5-d4412e982e67.png)
+
 
 상점에서 주문내역을 확인한다.
 
