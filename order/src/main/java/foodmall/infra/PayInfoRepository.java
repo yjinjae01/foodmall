@@ -10,6 +10,6 @@ public interface PayInfoRepository extends PagingAndSortingRepository<PayInfo, L
 
     List<PayInfo> findByOrderId(String orderId);
 
-
+    void deleteByOrderId(String orderId);
     
 }
