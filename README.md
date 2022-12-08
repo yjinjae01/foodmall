@@ -53,8 +53,9 @@
 
 상점에서 주문내역을 확인한다.
 
-![image](https://user-images.githubusercontent.com/118959734/205808796-f37da38d-4215-407d-b938-66174b950678.png)
-![image](https://user-images.githubusercontent.com/118959734/205808844-a320ee59-cd0b-47be-afcb-738d1fa9de7c.png)
+![image](https://user-images.githubusercontent.com/118959734/206336062-9da7b34a-ac4d-475f-8bce-f0b7884a8907.png)
+
+![image](https://user-images.githubusercontent.com/118959734/206336203-98d18922-86eb-485e-b67c-4a22e34e9caa.png)
 
 
 
