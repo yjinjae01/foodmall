@@ -13,27 +13,13 @@ import java.util.Date;
 @Data
 
 public class Payment  {
-
-
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     
-    
-    
-    
-    
     private Long id;
     
-    
-    
-    
-    
     private String orderId;
-    
-    
-    
-    
     
     private Boolean cancel;
 
@@ -46,61 +32,39 @@ public class Payment  {
 
     }
 
+    @PreRemove
+    public void onPreRemove(){
+
+    }
+
     public static PaymentRepository repository(){
         PaymentRepository paymentRepository = OrderApplication.applicationContext.getBean(PaymentRepository.class);
         return paymentRepository;
     }
 
-
-
     public void cancelPayment(CancelPaymentCommand cancelPaymentCommand){
+        setCancel(cancelPaymentCommand.getCancel());
     }
 
     public static void pay(OrderPlaced orderPlaced){
 
-        /** Example 1:  new item 
+        
         Payment payment = new Payment();
+        payment.setOrderId(String.valueOf(orderPlaced.getId()));
+        payment.setCancel(false);
         repository().save(payment);
-
-        Paid paid = new Paid(payment);
-        paid.publishAfterCommit();
-        */
-
-        /** Example 2:  finding and process
         
-        repository().findById(orderPlaced.get???()).ifPresent(payment->{
-            
-            payment // do something
-            repository().save(payment);
-
-            Paid paid = new Paid(payment);
-            paid.publishAfterCommit();
-
-         });
-        */
-
-        
+          
     }
+   
+    // 요리사의 주문 취소
     public static void rejectPayment(OrderRejected orderRejected){
-
-        /** Example 1:  new item 
-        Payment payment = new Payment();
-        repository().save(payment);
-
-        */
-
-        /** Example 2:  finding and process
         
-        repository().findById(orderRejected.get???()).ifPresent(payment->{
+        repository().findByOrderId(orderRejected.getOrderId()).ifPresent(payment->{
             
-            payment // do something
-            repository().save(payment);
-
+            repository().delete(payment);
 
          });
-        */
-
-        
     }
 
 
