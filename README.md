@@ -108,6 +108,10 @@ Request를 받아 처리하는 로직이다.
 
 ### 5.Circuit Breaker  
 
+모델에서 Relation 의 Circuit Breaker 설정
+
+![image](https://user-images.githubusercontent.com/118959734/206360016-b513ff6a-9a45-4b71-ab81-1930cbc94095.png)
+
 timeout 시간 설정
 
 ![image](https://user-images.githubusercontent.com/118959734/205817607-07570e57-a781-420b-97ce-0bf8622cd74b.png)
