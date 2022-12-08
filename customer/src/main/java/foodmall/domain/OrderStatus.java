@@ -13,22 +13,12 @@ import java.util.Date;
 @Data
 
 public class OrderStatus  {
-
-
-    
+ 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    
-    
-    
-    
-    
+        
     private Long id;
-    
-    
-    
-    
-    
+        
     private String status;
 
     @PostPersist
@@ -46,194 +36,104 @@ public class OrderStatus  {
     }
 
 
-
-
     public static void notify(OrderCanceled orderCanceled){
 
-        /** Example 1:  new item 
-        OrderStatus orderStatus = new OrderStatus();
-        repository().save(orderStatus);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(orderCanceled.get???()).ifPresent(orderStatus->{
+        repository().findById(orderCanceled.getId()).ifPresent(orderStatus->{
             
-            orderStatus // do something
+            orderStatus.setStatus(orderCanceled.getStatus()); 
             repository().save(orderStatus);
 
-
          });
-        */
-
         
     }
+
     public static void notify(Paid paid){
-
-        /** Example 1:  new item 
-        OrderStatus orderStatus = new OrderStatus();
-        repository().save(orderStatus);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(paid.get???()).ifPresent(orderStatus->{
+      
+        repository().findById(Long.parseLong(paid.getOrderId())).ifPresent(orderStatus->{
             
-            orderStatus // do something
+            orderStatus.setStatus("Paid"); // do something
             repository().save(orderStatus);
 
-
          });
-        */
-
         
     }
+
     public static void notify(OrderAccepted orderAccepted){
 
-        /** Example 1:  new item 
-        OrderStatus orderStatus = new OrderStatus();
-        repository().save(orderStatus);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(orderAccepted.get???()).ifPresent(orderStatus->{
+     
+        repository().findById(Long.parseLong(orderAccepted.getOrderId())).ifPresent(orderStatus->{
             
-            orderStatus // do something
+            orderStatus.setStatus(orderAccepted.getStatus()); 
             repository().save(orderStatus);
-
-
          });
-        */
-
-        
+          
     }
+
     public static void notify(OrderRejected orderRejected){
 
-        /** Example 1:  new item 
-        OrderStatus orderStatus = new OrderStatus();
-        repository().save(orderStatus);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(orderRejected.get???()).ifPresent(orderStatus->{
+        repository().findById(Long.parseLong(orderRejected.getOrderId())).ifPresent(orderStatus->{
             
-            orderStatus // do something
+            orderStatus.setStatus(orderRejected.getStatus());
             repository().save(orderStatus);
-
-
          });
-        */
-
         
     }
+
     public static void notify(OrderStarted orderStarted){
 
-        /** Example 1:  new item 
-        OrderStatus orderStatus = new OrderStatus();
-        repository().save(orderStatus);
 
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(orderStarted.get???()).ifPresent(orderStatus->{
+        repository().findById(Long.parseLong(orderStarted.getOrderId())).ifPresent(orderStatus->{
             
-            orderStatus // do something
+            orderStatus.setStatus(orderStarted.getStatus()); 
             repository().save(orderStatus);
 
-
          });
-        */
-
         
     }
+
     public static void notify(OrderFinished orderFinished){
 
-        /** Example 1:  new item 
-        OrderStatus orderStatus = new OrderStatus();
-        repository().save(orderStatus);
 
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(orderFinished.get???()).ifPresent(orderStatus->{
+        repository().findById(Long.parseLong(orderFinished.getOrderId())).ifPresent(orderStatus->{
             
-            orderStatus // do something
+            orderStatus.setStatus(orderFinished.getStatus());
             repository().save(orderStatus);
 
-
          });
-        */
-
         
     }
+
     public static void notify(Delivered delivered){
 
-        /** Example 1:  new item 
-        OrderStatus orderStatus = new OrderStatus();
-        repository().save(orderStatus);
 
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(delivered.get???()).ifPresent(orderStatus->{
+        repository().findById(Long.parseLong(delivered.getOrderId())).ifPresent(orderStatus->{
             
-            orderStatus // do something
+            orderStatus.setStatus(delivered.getStatus()); 
             repository().save(orderStatus);
 
-
          });
-        */
-
         
     }
+
     public static void notify(Picked picked){
 
-        /** Example 1:  new item 
-        OrderStatus orderStatus = new OrderStatus();
-        repository().save(orderStatus);
 
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(picked.get???()).ifPresent(orderStatus->{
+           
+        repository().findById(Long.parseLong(picked.getOrderId())).ifPresent(orderStatus->{
             
-            orderStatus // do something
+            orderStatus.setStatus(picked.getStatus()); 
             repository().save(orderStatus);
-
-
          });
-        */
-
-        
+               
     }
+
     public static void notify(OrderPlaced orderPlaced){
 
-        /** Example 1:  new item 
         OrderStatus orderStatus = new OrderStatus();
+        orderStatus.setId(orderPlaced.getId());
+        orderStatus.setStatus(orderPlaced.getStatus());
+
         repository().save(orderStatus);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(orderPlaced.get???()).ifPresent(orderStatus->{
-            
-            orderStatus // do something
-            repository().save(orderStatus);
-
-
-         });
-        */
 
         
     }
